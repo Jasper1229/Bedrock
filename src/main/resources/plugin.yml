@@ -6,3 +6,4 @@ authors: [ Jasper1229 ]
 description: This plugin provides basic commands that are the bedrock of all of your servers!
 commands:
   btp:
+    permission: bedrock.teleport

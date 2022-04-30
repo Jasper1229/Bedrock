@@ -22,20 +22,28 @@ public class TeleportCommand implements CommandExecutor {
         {
             Player playerSender = (Player) sender;
 
-            if (args.length == 0 || !Bukkit.getOnlinePlayers().toString().contains(args[0]) || args.length > 1)
+            if (args.length == 0 || !Bukkit.getOnlinePlayers().toString().contains(args[0]) || args.length > 1 && !Bukkit.getOnlinePlayers().toString().contains(args[0]))
             {
                 playerSender.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("plugin-prefix")) + ChatColor.LIGHT_PURPLE + " /btp <Online Player>");
                 return true;
-            } else {
-
+            } else if(args.length == 2 && Bukkit.getOnlinePlayers().toString().contains(args[1])) // If teleport command has two arguments example: /teleport Jasper1229 MonkeygirIs
+            {
+                Player teleporting = Bukkit.getPlayer(args[0]); // Teleporting player (First argument)
+                Player teleportDestination = Bukkit.getPlayer(args[1]); // Destination player (Second argument)
+                teleporting.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("plugin-prefix")) + ChatColor.LIGHT_PURPLE + " Teleporting");
+                teleporting.teleport(teleportDestination.getLocation()); // Teleporting..
+                return true;
+            }
+            else
+            {
                 Player playerRequested = Bukkit.getPlayer(args[0]);
                 playerSender.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("plugin-prefix")) + ChatColor.LIGHT_PURPLE + " Teleporting");
                 playerSender.teleport(playerRequested.getLocation());
                 return true;
             }
         }
-        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("plugin-prefix")) + "Can only be run be players!");
-        return false;
+        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("plugin-prefix")) + ChatColor.DARK_PURPLE +  " Can only be run be players!");
+        return true;
     }
 
 }

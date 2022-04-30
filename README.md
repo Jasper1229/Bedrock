@@ -9,7 +9,7 @@ This plugin provides commands and features that should be the Bedrock of every M
 # Features
 
 * Teleport: <br />
-	* Usage: /btp \<User\> <br />
+	* Usage: /btp \<User\> \[DestinationUser\] <br />
 	* Description: Allows easy teleportation. <br />
 
 
