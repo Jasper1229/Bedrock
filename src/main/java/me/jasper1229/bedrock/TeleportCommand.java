@@ -22,16 +22,17 @@ public class TeleportCommand implements CommandExecutor {
         {
             Player playerSender = (Player) sender;
 
-            if (!args[0].contains(Bukkit.getOnlinePlayers().toString()) || args.length > 1)
+            if (args.length == 0 || !Bukkit.getOnlinePlayers().toString().contains(args[0]) || args.length > 1)
             {
                 playerSender.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("plugin-prefix")) + ChatColor.LIGHT_PURPLE + " /btp <Online Player>");
                 return true;
-            }
+            } else {
 
-            Player playerRequested = Bukkit.getPlayer(args[0]);
-            playerSender.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("plugin-prefix")) + ChatColor.LIGHT_PURPLE + " Teleporting");
-            playerSender.teleport(playerRequested.getLocation());
-            return true;
+                Player playerRequested = Bukkit.getPlayer(args[0]);
+                playerSender.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("plugin-prefix")) + ChatColor.LIGHT_PURPLE + " Teleporting");
+                playerSender.teleport(playerRequested.getLocation());
+                return true;
+            }
         }
         sender.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("plugin-prefix")) + "Can only be run be players!");
         return false;
