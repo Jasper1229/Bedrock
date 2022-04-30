@@ -4,3 +4,5 @@ main: me.jasper1229.bedrock.Bedrock
 api-version: 1.16
 authors: [ Jasper1229 ]
 description: This plugin provides basic commands that are the bedrock of all of your servers!
+commands:
+  btp:
