@@ -12,6 +12,8 @@ public final class Bedrock extends JavaPlugin {
         saveDefaultConfig();
         getLogger().info("Bedrock has been enabled! ♥");
         getCommand("btp").setExecutor(new TeleportCommand(this));
+        getCommand("frog").setExecutor(new FrogCommand(this));
+        getServer().getPluginManager().registerEvents(new Events(), this);
 
     }
 
