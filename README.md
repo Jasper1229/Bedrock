@@ -12,6 +12,9 @@ This plugin provides commands and features that should be the Bedrock of every M
 * Teleport: <br />
 	* Usage: /btp \<User\> \[DestinationUser\] <br />
 	* Description: Allows easy teleportation. <br />
+* Frog:
+	* Usage /frog
+	* Description: Toggles frog mode which launches you higher than a normal jump when you crouch. 
 
 
 ***
