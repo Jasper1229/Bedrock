@@ -30,14 +30,14 @@ public class FrogCommand implements CommandExecutor
         {
             isFrog.remove(player.getUniqueId());
             player.sendMessage(ChatColor.translateAlternateColorCodes('&',plugin.getConfig().getString("plugin-prefix")) + ChatColor.translateAlternateColorCodes('&', "&2&l You have switched back into a human :("));
-            player.removePotionEffect(PotionEffectType.JUMP);
+            //player.removePotionEffect(PotionEffectType.JUMP);
             return true;
         }
         else if(!isFrog.containsKey(player.getUniqueId()))
         {
             isFrog.put(player.getUniqueId(), "");
             player.sendMessage(ChatColor.translateAlternateColorCodes('&',plugin.getConfig().getString("plugin-prefix")) + ChatColor.translateAlternateColorCodes('&', "&2&l You have switched into a frog :D"));
-            player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 10000, 25));
+            //player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, Integer.MAX_VALUE, 25));
             return true;
         }
         return true;
