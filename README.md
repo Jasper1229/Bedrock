@@ -1,5 +1,5 @@
 
-![alt text](https://github.com/Jasper1229/Bedrock/blob/main/images/banner.png)
+![alt text](https://github.com/Jasper1229/Bedrock/blob/main/BedrockBannerGif.gif)
 ***
 # Bedrock
 
