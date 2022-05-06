@@ -25,7 +25,7 @@ public class Events implements Listener
             player.sendMessage("Sneak event is happening");
             if (!FrogCommand.isFrog.containsKey(player.getUniqueId()) || !player.isOnGround()) return;
             Vector v = player.getVelocity();
-            v.setY(100);
+            v.setY(15);
             v.setX(0);
             v.setZ(0);
             player.setVelocity(v);
@@ -35,7 +35,7 @@ public class Events implements Listener
 
     }
     @EventHandler
-    public void onDamage(EntityDamageEvent event)
+    public void onFallDamage(EntityDamageEvent event)
     {
         if(event.getEntity() instanceof Player && event.getCause() == EntityDamageEvent.DamageCause.FALL)
         {

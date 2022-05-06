@@ -4,7 +4,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Bedrock extends JavaPlugin {
 
-    private static Bedrock instance;
 
     @Override
     public void onEnable() {
@@ -13,6 +12,7 @@ public final class Bedrock extends JavaPlugin {
         getLogger().info("Bedrock has been enabled! ♥");
         getCommand("btp").setExecutor(new TeleportCommand(this));
         getCommand("frog").setExecutor(new FrogCommand(this));
+        getCommand("find").setExecutor(new FindCommand(this));
         getServer().getPluginManager().registerEvents(new Events(), this);
 
     }

@@ -9,3 +9,5 @@ commands:
     permission: bedrock.teleport
   frog:
     permission: bedrock.frog
+  find:
+    permission: bedrock.find
