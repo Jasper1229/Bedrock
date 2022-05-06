@@ -15,6 +15,9 @@ This plugin provides commands and features that should be the Bedrock of every M
 * Frog:
 	* Usage /frog
 	* Description: Toggles frog mode which launches you higher than a normal jump when you crouch. 
+* Find:
+	* Usage /find \<User\>
+	* Description: Displays the user's world, location, and allows simple teleportation in one click!
 
 
 ***
