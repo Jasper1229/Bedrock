@@ -10,4 +10,4 @@ commands:
   frog:
     permission: bedrock.frog
   find:
-    permission: bedrock.find 
+    permission: bedrock.find
