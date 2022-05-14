@@ -1,17 +1,22 @@
 package me.jasper1229.bedrock;
 
-import org.bukkit.entity.Entity;
+import me.jasper1229.bedrock.commands.fun.FrogCommand;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.player.PlayerPortalEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
+import org.bukkit.event.world.PortalCreateEvent;
 import org.bukkit.util.Vector;
 
 
 
 public class Events implements Listener
 {
+    private final Bedrock plugin;
+    public Events(Bedrock plugin) {this.plugin = plugin;}
     int sneakDown = 1;
 
     @EventHandler
@@ -22,10 +27,9 @@ public class Events implements Listener
         {
             ;
             Player player = event.getPlayer();
-            player.sendMessage("Sneak event is happening");
             if (!FrogCommand.isFrog.containsKey(player.getUniqueId()) || !player.isOnGround()) return;
             Vector v = player.getVelocity();
-            v.setY(15);
+            v.setY(2);
             v.setX(0);
             v.setZ(0);
             player.setVelocity(v);
@@ -44,6 +48,29 @@ public class Events implements Listener
             event.setCancelled(true);
         }
 
+    }
+    @EventHandler
+    public void onNetherPortal(PlayerPortalEvent event)
+    {
+        Boolean portalsDisabled = plugin.getConfig().getBoolean("portals-disabled");
+        if(portalsDisabled)
+        {
+            event.setCancelled(true);
+            event.getPlayer().sendMessage(plugin.pluginPrefix + ChatColor.RED + " Nether portals are disabled.");
+        }
+    }
+    @EventHandler
+    public void onNetherPortalCreate(PortalCreateEvent event)
+    {
+        Boolean portalsDisabled = plugin.getConfig().getBoolean("portals-disabled");
+        if(portalsDisabled)
+        {
+            event.setCancelled(true);
+            if (event.getEntity() instanceof Player)
+            {
+                event.getEntity().sendMessage(plugin.pluginPrefix + ChatColor.RED + " Nether portals are disabled.");
+            }
+        }
     }
 
 }

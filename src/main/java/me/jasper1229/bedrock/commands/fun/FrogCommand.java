@@ -1,5 +1,6 @@
-package me.jasper1229.bedrock;
+package me.jasper1229.bedrock.commands.fun;
 
+import me.jasper1229.bedrock.Bedrock;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -26,14 +27,14 @@ public class FrogCommand implements CommandExecutor
         if(isFrog.containsKey(player.getUniqueId()))
         {
             isFrog.remove(player.getUniqueId());
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&',plugin.getConfig().getString("plugin-prefix")) + ChatColor.translateAlternateColorCodes('&', "&2&l You have switched back into a human :("));
+            player.sendMessage(plugin.pluginPrefix + ChatColor.translateAlternateColorCodes('&', "&2&l You have switched back into a human :("));
             //player.removePotionEffect(PotionEffectType.JUMP);
             return true;
         }
         else if(!isFrog.containsKey(player.getUniqueId()))
         {
             isFrog.put(player.getUniqueId(), "");
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&',plugin.getConfig().getString("plugin-prefix")) + ChatColor.translateAlternateColorCodes('&', "&2&l You have switched into a frog :D"));
+            player.sendMessage(plugin.pluginPrefix + ChatColor.translateAlternateColorCodes('&', "&2&l You have switched into a frog :D"));
             //player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, Integer.MAX_VALUE, 25));
             return true;
         }

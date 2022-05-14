@@ -11,3 +11,6 @@ commands:
     permission: bedrock.frog
   find:
     permission: bedrock.find
+  dnp:
+    permission: bedrock.dnp
+    aliases: [disablenetherportals,dnportals]

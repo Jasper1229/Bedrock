@@ -1,5 +1,6 @@
-package me.jasper1229.bedrock;
+package me.jasper1229.bedrock.commands.utility;
 
+import me.jasper1229.bedrock.Bedrock;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -29,21 +30,21 @@ public class TeleportCommand implements CommandExecutor
 
         if (args.length == 0 || !Bukkit.getOnlinePlayers().toString().contains(args[0]) || args.length > 1 && !Bukkit.getOnlinePlayers().toString().contains(args[0]))
         {
-            playerSender.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("plugin-prefix")) + ChatColor.LIGHT_PURPLE + " /btp <Online Player>");
+            playerSender.sendMessage(plugin.pluginPrefix + ChatColor.LIGHT_PURPLE + " /btp <Online Player>");
             return true;
         }
         else if(args.length == 2 && Bukkit.getOnlinePlayers().toString().contains(args[1])) // If teleport command has two arguments example: /teleport Jasper1229 MonkeygirIs
         {
             Player teleporting = Bukkit.getPlayer(args[0]); // Teleporting player (First argument)
             Player teleportDestination = Bukkit.getPlayer(args[1]); // Destination player (Second argument)
-            teleporting.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("plugin-prefix")) + ChatColor.LIGHT_PURPLE + " Teleporting");
+            teleporting.sendMessage(plugin.pluginPrefix + ChatColor.LIGHT_PURPLE + " Teleporting");
             teleporting.teleport(teleportDestination.getLocation()); // Teleporting..
             return true;
         }
         else
         {
             Player playerRequested = Bukkit.getPlayer(args[0]);
-            playerSender.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("plugin-prefix")) + ChatColor.LIGHT_PURPLE + " Teleporting");
+            playerSender.sendMessage(plugin.pluginPrefix + ChatColor.LIGHT_PURPLE + " Teleporting");
             playerSender.teleport(playerRequested.getLocation());
             return true;
         }

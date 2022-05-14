@@ -1,5 +1,6 @@
-package me.jasper1229.bedrock;
+package me.jasper1229.bedrock.commands.utility;
 
+import me.jasper1229.bedrock.Bedrock;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -25,7 +26,7 @@ public class FindCommand implements CommandExecutor
 
         if(!(sender instanceof Player) || args.length == 0 || args.length > 1 || !Bukkit.getOnlinePlayers().toString().contains(args[0]))
         {
-            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("plugin-prefix") + ChatColor.LIGHT_PURPLE +  " /find <Online Player>" ));
+            sender.sendMessage(plugin.pluginPrefix + ChatColor.LIGHT_PURPLE +  " /find <Online Player>" );
             return true;
         }
 
