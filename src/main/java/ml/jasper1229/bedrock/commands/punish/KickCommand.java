@@ -1,4 +1,4 @@
-package me.jasper1229.bedrock.commands.punish;
+package ml.jasper1229.bedrock.commands.punish;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

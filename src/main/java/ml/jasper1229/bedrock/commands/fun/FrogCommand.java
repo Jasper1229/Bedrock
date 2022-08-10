@@ -1,6 +1,6 @@
-package me.jasper1229.bedrock.commands.fun;
+package ml.jasper1229.bedrock.commands.fun;
 
-import me.jasper1229.bedrock.Bedrock;
+import ml.jasper1229.bedrock.Bedrock;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

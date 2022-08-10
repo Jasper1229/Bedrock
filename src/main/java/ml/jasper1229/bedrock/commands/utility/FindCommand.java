@@ -1,8 +1,7 @@
-package me.jasper1229.bedrock.commands.utility;
+package ml.jasper1229.bedrock.commands.utility;
 
-import me.jasper1229.bedrock.Bedrock;
+import ml.jasper1229.bedrock.Bedrock;
 import net.md_5.bungee.api.chat.ClickEvent;
-import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -10,8 +9,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
-import java.nio.charset.StandardCharsets;
 
 public class FindCommand implements CommandExecutor
 {
@@ -24,7 +21,7 @@ public class FindCommand implements CommandExecutor
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
     {
 
-        if(!(sender instanceof Player) || args.length == 0 || args.length > 1 || !Bukkit.getOnlinePlayers().toString().contains(args[0]))
+        if(!(sender instanceof Player) || !(args.length == 1) || !Bukkit.getOnlinePlayers().toString().contains(args[0]))
         {
             sender.sendMessage(plugin.pluginPrefix + ChatColor.LIGHT_PURPLE +  " /find <Online Player>" );
             return true;
