@@ -3,6 +3,9 @@ package me.jasper1229.bedrock.commands.punish;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.ChatColor;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 
 public class Kick implements CommandExecutor
 {
