@@ -53,7 +53,7 @@ public class Events implements Listener
     @EventHandler
     public void onNetherPortal(PlayerPortalEvent event)
     {
-        Boolean portalsDisabled = plugin.getConfig().getBoolean("portals-disabled");
+        boolean portalsDisabled = plugin.getConfig().getBoolean("portals-disabled");
         if(portalsDisabled)
         {
             event.setCancelled(true);
@@ -63,7 +63,7 @@ public class Events implements Listener
     @EventHandler
     public void onNetherPortalCreate(PortalCreateEvent event)
     {
-        Boolean portalsDisabled = plugin.getConfig().getBoolean("portals-disabled");
+        boolean portalsDisabled = plugin.getConfig().getBoolean("portals-disabled");
         if(portalsDisabled)
         {
             event.setCancelled(true);
