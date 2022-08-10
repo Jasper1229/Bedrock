@@ -6,6 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import java.util.Arrays;
 
 public class Kick implements CommandExecutor
 {
@@ -23,7 +24,7 @@ public class Kick implements CommandExecutor
             return true;
         }
 
-        String reason = String.join(" ", args, 1);
+        String reason = String.join(" ", Arrays.copyOfRange(args, 1, args.length));
         target.disconnect(ChatColor.translateAlternateColorCodes('&', reason));
 
         sender.sendMessage(ChatColor.GREEN + "Sucessfully kicked " + target.getName() + " from server.");
