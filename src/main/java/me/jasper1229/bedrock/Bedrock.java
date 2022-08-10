@@ -23,7 +23,7 @@ public final class Bedrock extends JavaPlugin {
         getCommand("frog").setExecutor(new FrogCommand(this));
         getCommand("find").setExecutor(new FindCommand(this));
         getCommand("dnp").setExecutor(new DisableNetherPortalsCommand(this));
-        getCommand("kick").setExecutor(new KickCommand());
+        getCommand("bkick").setExecutor(new KickCommand());
         getServer().getPluginManager().registerEvents(new Events(this), this);
 
     }
